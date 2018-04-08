@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  div.banner
+    h2.banner-content Acá va banner del sitio
+  each publication in publications_list
+    div.recomendation
+      h4.recomendation-text Publicación
+      p
+        a(href=publication.url) #{publication._id} 
+        span de 
+        a(href=publication.publisher.url) #{publication.publisher.names}
+
+  else
+    li No se han encontrado publicaciones.
+

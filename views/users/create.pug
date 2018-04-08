@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='username') Usuario:
+      input#username.form-control(type='text', placeholder='JohnDoe21' name='username' value=(undefined===user ? '' : user.username))
+    div.form-group
+      label(for='contrasenia') Contraseña:
+      input#contrasenia.form-control(type='password', name='contrasenia')
+    div.form-group
+      label(for='firstnames') Nombres:
+      input#firstnames.form-control(type='text', placeholder='John' name='firstnames' value=(undefined===user ? '' : user.names))
+    div.form-group
+      label(for='familynames') Apellido:
+      input#familynames.form-control(type='text', placeholder='Doe' name='familynames' value=(undefined===user ? '' : user.familynames))
+    button.btn.btn-primary(type='submit') Aceptar
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+
+  h1 #{user.username}
+
+  div(style='margin-left:20px;margin-top:20px')
+    h4 Nombres: #{user.names}
+    h4 Apellidos: #{user.familynames}
+
+    h4 Publicaciones
+
+    div(style='margin-left:40px;margin-top:20px')
+      dl
+      each publication in user_publications
+        dt 
+          a(href=publication.url) #{publication.address}
+        dd #{publication.status}
+
+      else
+        p Este usuario aún no tiene publicaciones.

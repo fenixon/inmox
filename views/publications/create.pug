@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+
+  form(method='POST' action='')
+    if publication && publication._id
+      input#id(type='hidden', name='id' value=publication._id)
+    div.form-group
+      label(for='address') Dirección:
+      input#address.form-control(type='text', placeholder='Zorrilla 1075' name='address' value=(undefined===publication ? '' : publication.address))
+    div.form-group
+      label(for='currency') Moneda:
+      select#currency.form-control(type='text', name='currency' value=(undefined===publication ? '' : publication.currency))
+        option(value='UYU') UYU
+        option(value='USD') USD
+    div.form-group
+      label(for='price') Precio:
+      input#price.form-control(type='number', name='price' placeholder='8000.00' value=(undefined===publication ? '' : publication.price))
+    if users
+      div.form-group
+        label(for='publisher') Publicado por:
+        select#publisher.form-control(type='text', name='publisher' value=(undefined===publication ? '' : publication.publisher))
+          for user in users
+            option(value=user._id) #{user.username}
+    button.btn.btn-primary(type='submit') Publicar
+
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

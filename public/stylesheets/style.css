@@ -1,0 +1,35 @@
+.main {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.sidebar-nav {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.banner {
+  min-height: 80px;
+  background-color: skyblue;
+}
+
+.recomendation {
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  min-width: 200px;
+  min-height: 200px;
+  padding: 10px;
+  background-color: green;
+  display: inline-block;
+  text-align: center;
+}
+
+.recomendation a {
+  color: white;
+}
+
+.footer {
+  text-align: center;
+}

@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+
+  h1
+    a(href='#{publication.url}') ##{publication._id}
+
+  div(style='margin-left:20px;margin-top:20px')
+    h4 Dirección: #{publication.address}
+    h4 Precio: #{publication.currency} #{publication.price}
+
+    h4 Publicado: #{publication.creationdate_formatted}
+    h4 Expira: #{publication.expirationdate_formatted}
+    h4 Publicado por: 
+      a(href=publication.publisher.url) #{publication.publisher.username}
+
+    div(style='margin-left:40px;margin-top:20px')
+      p #{publication.status}
+
+    a.btn.btn-primary(href=publication.url+'/update') Editar
+

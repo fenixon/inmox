@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Inicio de sesión
+  form(method='POST' action='/users/login')
+    div(class='form-group')
+      label(for='username') Usuario:
+      input(class='form-control', type='text', name='username', id='username')
+    div(class='form-group')
+      label(for='password') Constraseña:
+      input(class='form-control', type='password', name='password', id='password')
+    div(class='form-group')
+      input(class='btn btn-outline-primary', type='submit', value='Aceptar')
