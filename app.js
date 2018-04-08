@@ -30,7 +30,7 @@ app.use('/users', users);
 app.use('/publications', publications);
 
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://127.0.0.1/inmo';
+var mongoDB = process.env.MONGODB_URI || 'mongodb://127.0.0.1/inmo';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
